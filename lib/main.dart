@@ -14,9 +14,50 @@ class CorenApp extends StatelessWidget {
 //          title: Text("Coren"),
 //        ),
         backgroundColor: Colors.green[900],
-        body: Center(
-          child: Image(
-            image: AssetImage('images/coren-logo.jpg'),
+        body: SafeArea(
+          child: Center(
+            child: Container(
+              color: Colors.white,
+              margin: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.0),
+              child: Form(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text("Please enter your Login details"),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          labelText: "Email addresss",
+                          border: OutlineInputBorder()),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          hintText: "Secret password",
+                          labelText: "Password",
+                          border: OutlineInputBorder()),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    RaisedButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      disabledColor: Colors.green[900],
+                      disabledTextColor: Colors.white,
+                      padding: EdgeInsets.fromLTRB(50, 20, 50, 20),
+                      splashColor: Colors.blueAccent,
+                      child: Text("Login"),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
       ),
@@ -24,4 +65,4 @@ class CorenApp extends StatelessWidget {
   }
 }
 
-class MyContainer extends Scaffold {}
+class MyContainer extends Form {}
